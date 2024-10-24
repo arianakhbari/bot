@@ -1,4 +1,5 @@
 // index.js
+require('dotenv').config();
 const { Telegraf, session, Markup } = require('telegraf');
 const config = require('./config/config');
 const db = require('./models');
@@ -22,9 +23,11 @@ const bot = new Telegraf(config.BOT_TOKEN);
 bot.use(session());
 
 // فرمان /start
-bot.start(async (ctx) => {
-    await registration.start(ctx);
+bot.start((ctx) => {
+    ctx.reply('خوش آمدید! از دستور /menu برای مشاهده گزینه‌ها استفاده کنید.');
 });
+
+bot.command('menu', registrationHandler.mainMenu);
 
 // هندلر برای دریافت پیام‌های متنی
 bot.on('text', async (ctx) => {
