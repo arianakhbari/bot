@@ -549,10 +549,10 @@ async function adminFinalConfirmTransaction(ctx) {
     } else {
         await query.editMessageText("⚠️ گزینه نامعتبری انتخاب شده است.");
     }
+	
 }
 
 module.exports = {
-    handleMainMenu,
     selectTransactionType,
     handleTransactionType,
     transactionAmountTypeHandler,
