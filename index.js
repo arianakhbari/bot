@@ -4,10 +4,10 @@ const { Telegraf, session, Markup } = require('telegraf');
 const config = require('./config/config');
 const db = require('./models');
 const logger = require('./utils/logger');
-const registration = require('./handlers/registration');
-const transaction = require('./handlers/transaction');
-const admin = require('./handlers/admin');
-const handleError = require('./handlers/errorHandler');
+const registrationHandler = require('./handlers/registration');
+const transactionHandler = require('./handlers/transaction');
+const adminHandler = require('./handlers/admin');
+const handleErrorHandler = require('./handlers/errorHandler');
 
 // همگام‌سازی دیتابیس
 db.sequelize.sync().then(() => {
