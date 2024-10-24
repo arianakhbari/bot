@@ -1,0 +1,29 @@
+{
+  "name": "telegram-bot",
+  "version": "1.0.0",
+  "description": "یک ربات تلگرام با استفاده از Node.js، Telegraf.js و Sequelize",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "telegraf",
+    "sequelize",
+    "nodejs"
+  ],
+  "author": "نام شما",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "sequelize": "^6.32.1",
+    "sqlite3": "^5.1.6",
+    "telegraf": "^4.12.2",
+    "winston": "^3.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
