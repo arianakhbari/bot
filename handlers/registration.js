@@ -186,10 +186,6 @@ async function mainMenu(ctx) {
 
 module.exports = {
     mainMenu,
-    // صادر کردن سایر توابع و هندلرها در صورت نیاز
-};
-
-module.exports = {
     start,
     getName,
     getFamilyName,
