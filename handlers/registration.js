@@ -10,6 +10,16 @@ const COUNTRY = 'COUNTRY';
 const PHONE = 'PHONE';
 const ID_CARD = 'ID_CARD';
 
+async function mainMenu(ctx) {
+    const keyboard = [
+        [Markup.button.text('📈 تراکنش')],
+        [Markup.button.text('👤 ثبت‌نام')],
+        [Markup.button.text('ℹ️ درباره ما')]
+    ];
+
+    await ctx.reply('لطفاً یک گزینه را انتخاب کنید:', Markup.keyboard(keyboard).resize().oneTime());
+}
+
 async function start(ctx) {
     const userId = ctx.from.id;
     const user = await db.User.findOne({ where: { telegramId: userId } });
@@ -173,6 +183,11 @@ async function mainMenu(ctx) {
 
     await ctx.reply("📂 به منوی اصلی خوش آمدید. لطفاً یکی از گزینه‌ها را انتخاب کنید:", Markup.keyboard(keyboard).resize());
 }
+
+module.exports = {
+    mainMenu,
+    // صادر کردن سایر توابع و هندلرها در صورت نیاز
+};
 
 module.exports = {
     start,
